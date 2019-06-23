@@ -1,0 +1,7 @@
+<div>
+				{% for waypoint in data %}
+								{{ waypoint.map }}:
+								{{ waypoint.date }}
+								<br />
+				{% endfor %}
+</div>
