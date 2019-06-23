@@ -1,7 +1,22 @@
-<div>
-				{% for waypoint in data %}
-								{{ waypoint.map }}:
-								{{ waypoint.date }}
-								<br />
-				{% endfor %}
-</div>
+<?xml version="1.0" encoding="utf-8"?>
+
+<rss version="2.0">
+	<channel>
+		<title>TrackMyTour</title>
+		<link>http://trackmytour-rss.michaelgeraci.com/</link>
+		<description>An RSS feed of my last bike trip.</description>
+
+		{% for waypoint in data %}
+			<item>
+				<title>{{ waypoint.title }}</title>
+				<description>{{ waypoint.comment }}</description>
+				<link>{{ waypoint.url }}</link>
+				<pubDate>{{ waypoint.date }}</pubDate>
+				{% if waypoint.image %}
+					<enclosure url="{{ waypoint.image }}" length="12216320" type="image/jpg" />
+				{% endif %}
+			</item>
+		{% endfor %}
+
+	</channel>
+</rss>
