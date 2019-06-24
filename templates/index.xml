@@ -13,7 +13,7 @@
 				<link>{{ waypoint.url }}</link>
 				<pubDate>{{ waypoint.date }}</pubDate>
 				{% if waypoint.image %}
-					<enclosure url="{{ waypoint.image }}" length="12216320" type="image/jpg" />
+					<enclosure url="{{ waypoint.image }}" length="12216320" type="image/jpeg" />
 				{% endif %}
 			</item>
 		{% endfor %}
